@@ -1,10 +1,17 @@
-// You can include shared interfaces/types in a separate file
-// and then use them in any component by importing them. For
-// example, to import the interface below do:
-//
-// import { User } from 'path/to/interfaces';
+export interface PokemonsState {
+  loading: boolean,
+  listPokemons: Array<{}>,
+  error: boolean
+};
 
-export type User = {
-  id: number
-  name: string
-}
+export interface SearchInfoState {
+  filterValue: string,
+  filteredPokemons: { pokemons: Array<{}> },
+  selectedPokemon: Object
+};
+
+export interface TypesState {
+  loading: boolean,
+  listTypes: Array<{}>,
+  error: boolean
+};
