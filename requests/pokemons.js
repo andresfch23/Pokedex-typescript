@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { noZeroatBegin } from '../globalVars';
-import { formatNumber } from '../helpers';
+import { formatNumber } from '../utils/helpers';
 
 export const fetchInitialInfo = async () => {
     const response = await axios.get('https://pokeapi.co/api/v2/pokedex/1/');

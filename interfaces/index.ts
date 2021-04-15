@@ -15,3 +15,13 @@ export interface TypesState {
   listTypes: Array<{}>,
   error: boolean
 };
+
+export interface TypePokemons {
+  type: { name: string },
+  weaknesses: Array<string>
+};
+
+export interface SpecificTypePokemon {
+  name: string,
+  weaknesses: Array<string>
+};
