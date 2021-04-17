@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppDispatch, AppThunk } from '../store';
-import { fetchInitialInfo } from '../../requests/pokemons';
+import { fetchTypePokemons } from '../../requests/pokemons';
 import { TypesState } from '../../interfaces';
 
 const initialState = {
@@ -37,7 +37,7 @@ const {
 export const addTypes = (): AppThunk  => async (dispatch: AppDispatch) => {
     dispatch(addStarted());
 
-    return fetchInitialInfo().then(res => {
+    return fetchTypePokemons().then(res => {
         dispatch(addSuccess(res));
     })
     .catch(err => {

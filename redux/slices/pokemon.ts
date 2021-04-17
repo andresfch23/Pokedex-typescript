@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppDispatch, AppThunk } from '../store';
 import { fetchInitialInfo } from '../../requests/pokemons';
-import { PokemonsState } from '../../interfaces';
+import { PokemonsState, InfoPokemon } from '../../interfaces';
 
 const initialState = {
     loading: false,
@@ -16,7 +16,7 @@ const pokemonsSlice = createSlice({
         addStarted(state) {
             state.loading = true;
         },
-        addSuccess(state, action: PayloadAction<Array<{}>>) {
+        addSuccess(state, action: PayloadAction<Array<InfoPokemon>>) {
             state.loading = false;
             state.error = false;
             state.listPokemons = action.payload;

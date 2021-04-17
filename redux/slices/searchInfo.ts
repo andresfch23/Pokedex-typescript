@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SearchInfoState } from '../../interfaces';
+import { SearchInfoState, SpecificInfoPokemon } from '../../interfaces';
 
 const initialState = {
     filterValue: '',
@@ -13,7 +13,7 @@ const searchInfoSlice = createSlice({
     name: 'searchInfo',
     initialState,
     reducers: {
-        addFilteredPokemons(state, action: PayloadAction<Array<{}>>) {
+        addFilteredPokemons(state, action: PayloadAction<Array<SpecificInfoPokemon>>) {
             state.filteredPokemons = { pokemons: action.payload }
         },
         addFilterValue(state, action: PayloadAction<string>) {

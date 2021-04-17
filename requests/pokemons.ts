@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { noZeroatBegin } from '../globalVars';
 import { formatNumber } from '../utils/helpers';
+import { InfoPokemon, TypePokemons } from '../interfaces';
 
 export const fetchInitialInfo = async () => {
     const response = await axios.get('https://pokeapi.co/api/v2/pokedex/1/');
@@ -10,14 +11,15 @@ export const fetchInitialInfo = async () => {
     return pokemon_entries;
 };
 
-export const fetchPokemons = async (queryText, infoPokemons) => {
+export const fetchPokemons = async (queryText: string, infoPokemons: Array<InfoPokemon>) : Promise<any> => {
     try {
-        const filteredPokemons = infoPokemons.reduce((acc, pokemon) => {
+        const filteredPokemons = infoPokemons.reduce((acc: Array<Promise<any>>, pokemon) => {
             const { entry_number, pokemon_species: { name } } = pokemon;
-            const removeZeroAtBegin = !isNaN(queryText) && queryText.replace(noZeroatBegin, "");
+            const removeZeroAtBegin = !isNaN(+queryText) && queryText.replace(noZeroatBegin, "");
                     
             if (entry_number.toString() === removeZeroAtBegin || name.includes(queryText.toLowerCase())) {
-                acc.push(fetchInfoPokemon(entry_number, 'detail'));
+                const fetchedInfo = fetchInfoPokemon(entry_number, 'detail');
+                acc.push(fetchedInfo);
             }
 
             return acc;
@@ -31,17 +33,17 @@ export const fetchPokemons = async (queryText, infoPokemons) => {
     }
 }
 
-export const fetchTypePokemons = async () => {
+export const fetchTypePokemons = async (): Promise<any> => {
     try {
         const request = await axios.get('https://pokeapi.co/api/v2/type/');
         const types = request.data.results;
 
-        const typesInfo = await types.map(async type => {
+        const typesInfo = await types.map(async (type: TypePokemons) => {
             const { name, url } = type;
             const request = await axios.get(url);
             const data = request.data;
             const { double_damage_from } = data.damage_relations;
-            const namesDamage = double_damage_from.map(each => each.name);
+            const namesDamage = double_damage_from.map((each: TypePokemons) => each.name);
 
             return {
                 name,
@@ -57,19 +59,19 @@ export const fetchTypePokemons = async () => {
     }
 }
 
-export const fetchImage = async (num, type) => {
+export const fetchImage = async (num: string, type: string) => {
     const typeImg = type === 'detail' ? 'detail' : type === 'full' && 'full';
 
-    const urlImage = `https://cors-anywhere.herokuapp.com/http://assets.pokemon.com/assets/cms2/img/pokedex/${typeImg}/${num}.png`;
+    const urlImage = `/api/images/${typeImg}/${num}`;
+    // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/
 
-    const image = await axios.get(urlImage, { responseType: 'arraybuffer' }).then(response => {
-        return `data:image/png;base64, ${Buffer.from(response.data, 'binary').toString('base64')}` ;
-    });
+    const response = await axios.get(urlImage);
+    const image = response.data?.image;
 
     return image;
 } 
 
-export const fetchInfoPokemon = async (urlInfo, typeImg) => {
+export const fetchInfoPokemon = async (urlInfo: string, typeImg: string) => {
     try {
         const url = `https://pokeapi.co/api/v2/pokemon/${urlInfo}`;
         const response = await axios.get(url);
@@ -80,11 +82,11 @@ export const fetchInfoPokemon = async (urlInfo, typeImg) => {
         const complementInfo = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${urlInfo}`).then(response => {
             const { data: { flavor_text_entries } } = response;
 
-            const a = flavor_text_entries.find(description => {
-                return description.language.name === 'en';
+            const arrayDescriptions = flavor_text_entries.find(({ language: { name } } : { language: { name: string } })  => {
+                return name === 'en';
             });
 
-            return a.flavor_text.replace(/\s/g, " ");
+            return arrayDescriptions.flavor_text.replace(/\s/g, " ");
         });
         
         const infoPokemon = {...data, image, complementInfo, formatedNumber};

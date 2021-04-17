@@ -18,7 +18,7 @@ export const formatText = (text: string, name: string) => {
     return capitalizePokemonName;
 }
 
-export const chooseWeaknesses = (typesPok: Array<TypePokemons>, listTypes: Array<SpecificTypePokemon>) => {
+export const chooseWeaknesses = (typesPok: Array<{ type: TypePokemons}>, listTypes: Array<SpecificTypePokemon>) => {
     const weaknesses = typesPok.reduce((acc: Array<{}>, each) => {
         const selectedType = listTypes.find(type => type.name === each.type.name);
         
@@ -33,7 +33,7 @@ export const chooseWeaknesses = (typesPok: Array<TypePokemons>, listTypes: Array
   return [...new Set(weaknesses)];
 };
 
-export const formatNumber = (num: number) => {
+export const formatNumber = (num: number) : string => {
     let numPok;
 
     if (num < 10) {
