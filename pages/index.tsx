@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 // Components
 import PokemonCard from '../components/PokemonCard';
 import Loader from '../components/Loader';
+import Image from '../components/Image';
 
 // Other stuff
 import { noSpecialCharacters } from '../utils/globalVars';
@@ -106,7 +107,7 @@ const Home = () => {
 
         <div className="home__description">
           <div className="home__description-container">
-            <p>Search the pokemon by name or number. You must to writte at least 3 characters to search a pokemon. Example: {`'bul'`} or 001</p>
+            <p>Search the pokemon by name or number. You must to write at least 3 characters to search a pokemon. Example: {`'bul'`} or 001</p>
           </div>
         </div>
 
@@ -133,9 +134,17 @@ const Home = () => {
           ) : error && (
             <span>An error ocurred</span>
           )}
-
         </div>
+  
       </div>
+      {!filteredPokemons.length && !notFound && !error && (
+        <Image
+          optionalClassContainer="home__default-container-image"
+          optionalClassImage="home__default-image"
+          src="/images/pokemon_logo_title.png"
+          alt="Pokemon logo title"
+        />
+      )}
     </Layout>
   );
 }

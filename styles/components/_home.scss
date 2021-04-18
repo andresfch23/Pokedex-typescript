@@ -28,7 +28,6 @@
         ". cards cards cards cards cards cards .";
     }
 
-
     &-loading {
         grid-area: loader;
         place-self: center;
@@ -171,6 +170,19 @@
             }
         }
 
+    }
+
+    &__default-container-image {
+        width: fit-content;
+        margin: 0 auto;
+        top: -50px;
+        position: relative;
+        display: flex;
+    }
+
+    &__default-image {
+        width: 65%;
+        margin: 0 auto;
     }
 }
 
