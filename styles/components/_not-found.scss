@@ -1,0 +1,86 @@
+.not-found {
+    font-size: 40px;
+    text-align: center;
+    margin: 50px 0;
+
+    & h2 {
+        margin: 40px 0 18px 0;
+        color: $red-pokemon;
+    }
+
+    & span {
+        display: inline-block;
+        font-size: 200px;
+        margin: 0 25px;
+    }
+
+    &__image {
+        width: 150px;
+        padding-top: 30px;
+
+        &-container {
+            background-color: black;
+            display: inline-block;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    &__text {
+        margin: 20px 0 42px;
+    }
+
+    &__button {
+        border-radius: 30px;
+        padding: 5px 20px;
+        background-color: $red-pokemon;
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: $m-brk) {
+        & h2 {
+            margin: 40px 0;
+        }
+
+        & span {
+            font-size: 150px;
+            margin: 0 15px;
+        }
+
+        &__image {
+            width: 100px;
+            padding-top: 25px;
+
+            &-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $s-brk) {
+        font-size: 35px;
+
+        & h2 {
+            margin: 40px 0;
+        }
+
+        & span {
+            font-size: 100px;
+            margin: 0 15px;
+        }
+
+        &__image {
+            width: 75px;
+            padding-top: 10px;
+
+            &-container {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}

@@ -7,12 +7,12 @@ export interface PokemonsState {
 export interface SearchInfoState {
   filterValue: string,
   filteredPokemons: { pokemons: Array<SpecificInfoPokemon> },
-  selectedPokemon: Object
+  selectedPokemon: SpecificInfoPokemon
 };
 
 export interface TypesState {
   loading: boolean,
-  listTypes: Array<{}>,
+  listTypes: Array<SpecificTypePokemon>,
   error: boolean
 };
 
@@ -32,12 +32,17 @@ export interface InfoPokemon {
 };
 
 export interface SpecificInfoPokemon {
-  abilities: [],
+  abilities: [
+    {
+      ability: {
+        name: string
+      }
+    }
+  ],
   base_experience: number,
   forms: [],
   height: number,
   id: number,
-  is_default: boolean,
   moves: [],
   name: string,
   order: number,
@@ -45,8 +50,24 @@ export interface SpecificInfoPokemon {
     name: string
   },
   stats: [],
-  types: [],
+  types: [
+    { 
+      type : { 
+        name: string,
+        url: string
+      }
+    }
+  ],
   weight: number,
   image: string,
-  formatedNumber: string
+  formatedNumber: string,
+  complementInfo: string
+};
+export interface StatsPokemon {
+  base_stat: number,
+  stat: {
+    name: string,
+    url: string
+  }
+  name: string
 }

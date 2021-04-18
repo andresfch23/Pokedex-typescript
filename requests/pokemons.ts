@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { noZeroatBegin } from '../globalVars';
+import { noZeroatBegin } from '../utils/globalVars';
 import { formatNumber } from '../utils/helpers';
 import { InfoPokemon, TypePokemons } from '../interfaces';
 
@@ -60,11 +60,8 @@ export const fetchTypePokemons = async (): Promise<any> => {
 }
 
 export const fetchImage = async (num: string, type: string) => {
-    const typeImg = type === 'detail' ? 'detail' : type === 'full' && 'full';
-
+    const typeImg = type === 'detail' ? type : 'full';
     const urlImage = `/api/images/${typeImg}/${num}`;
-    // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/
-
     const response = await axios.get(urlImage);
     const image = response.data?.image;
 
@@ -82,9 +79,8 @@ export const fetchInfoPokemon = async (urlInfo: string, typeImg: string) => {
         const complementInfo = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${urlInfo}`).then(response => {
             const { data: { flavor_text_entries } } = response;
 
-            const arrayDescriptions = flavor_text_entries.find(({ language: { name } } : { language: { name: string } })  => {
-                return name === 'en';
-            });
+            const arrayDescriptions = flavor_text_entries
+                .find(({ language: { name } }: { language: { name: string } })  => name === 'en');
 
             return arrayDescriptions.flavor_text.replace(/\s/g, " ");
         });

@@ -18,8 +18,8 @@ export const formatText = (text: string, name: string) => {
     return capitalizePokemonName;
 }
 
-export const chooseWeaknesses = (typesPok: Array<{ type: TypePokemons}>, listTypes: Array<SpecificTypePokemon>) => {
-    const weaknesses = typesPok.reduce((acc: Array<{}>, each) => {
+export const chooseWeaknesses = (typesPok: Array<{ type: TypePokemons}>, listTypes: Array<SpecificTypePokemon>) : Array<string> => {
+    const weaknesses = typesPok.reduce((acc: Array<string>, each) : Array<string> => {
         const selectedType = listTypes.find(type => type.name === each.type.name);
         
         if (selectedType) {

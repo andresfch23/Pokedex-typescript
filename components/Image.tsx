@@ -18,7 +18,7 @@ const Image = (
                         <img src={src} className={optionalClassImage} alt={alt} onClick={onClick} />
                     </Link>
                 ) : (
-                    <ImageNext src={src} className={optionalClassImage} alt={alt} width={100} height={100} />
+                    <img src={src} className={optionalClassImage} alt={alt} />
                 )}
             </div>
         );

@@ -1,0 +1,43 @@
+@import '../base/vars';
+
+.type {
+    &__container {
+
+        &-general {
+            display: inline-block;
+            width: 40%;
+
+            @media only screen and (min-width: $s-brk) and (max-width: $l-brk) {
+                width: 44%;
+            }
+        }
+
+        &-detail {
+            display: inline-block;
+            width: 25%;
+            margin-bottom: 2%;
+
+            @media only screen and (max-width: $s-brk) {
+                width: 33%;
+            }
+        }
+    }
+
+    &__text {
+        text-transform: capitalize;
+        margin-right: 8%;
+        border-radius: 5px;
+        display: block;
+        text-align: center;
+
+        &-general {
+            padding: 1% 10%;
+            font-size: 15px;
+        }
+
+        &-detail {
+            padding: 4% 10%;
+            font-size: 18px;
+        }
+    }
+}

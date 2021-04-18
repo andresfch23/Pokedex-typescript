@@ -12,7 +12,7 @@ import { addPokemons } from '../redux/slices/pokemon';
 import { addTypes } from '../redux/slices/types';
 
 // Other stuff
-import { noSpecialCharacters } from '../globalVars';
+import { noSpecialCharacters } from '../utils/globalVars';
 import { fetchPokemons } from '../requests/pokemons';
 import { autoScroll } from '../utils/helpers';
 import { addFilteredPokemons, addFilterValue, addSelectedPokemon } from '../redux/slices/searchInfo';

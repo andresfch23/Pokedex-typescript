@@ -1,0 +1,254 @@
+@import '../base/vars';
+
+.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 120px auto;
+    grid-template-areas:
+        "left left left left right right right right"
+        ". . loader loader loader loader . ."
+        ". cards cards cards cards cards cards .";
+    align-items: stretch;
+    justify-items: stretch;
+    padding-bottom: 40px;
+
+    @media only screen and (max-width: $l-brk) {
+        grid-template-areas:
+            "left left left left right right right right"
+            "loader loader loader loader loader loader loader loader"
+            ". cards cards cards cards cards cards .";
+    }
+
+    @media only screen and (max-width: $s-brk) {
+        grid-template-rows: 100px auto 120px auto;
+        grid-template-areas:
+        "left left left left left left left left"
+        "right right right right right right right right"
+        "loader loader loader loader loader loader loader loader"
+        ". cards cards cards cards cards cards .";
+    }
+
+
+    &-loading {
+        grid-area: loader;
+        place-self: center;
+        font-size: 70px;
+        text-align: center;
+        margin: 20px 0px 0 40px;
+
+        @media only screen and (max-width: $s-brk) {
+           font-size: 50px;
+           margin: 0 0 0 20px;
+
+           &-image {
+               width: 45px;
+           }
+        }
+
+        & span {
+            display: inline-block;
+        }
+
+        &-image {
+            animation: spin 1.5s cubic-bezier(.17,.67,.83,.67);
+            animation-iteration-count: infinite;
+            width: 66px;
+
+            @media only screen and (max-width: $xs-brk) {
+                width: 45px;
+            }
+
+            &-container {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__search {
+        grid-area: left;
+        background-color: hsla(0,0%,1.2%, .8);
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'center';
+        align-items: center;
+        justify-items: end;
+
+        &-input {
+            grid-area: center;
+            width: 60%;
+            height: 50px;
+            margin: 0 20px;
+            border-radius: 15px;
+            border: 3px solid black;
+            font-size: 26px;
+            text-align: center;
+        
+            
+            &::placeholder {
+                color: hsl(0, 0%, 73%);
+                font-style: italic;
+                font-size: 23px;
+            }
+
+            @media only screen and (max-width: $l-brk) {
+                width: 80%;
+            }
+
+            @media only screen and (max-width: $m-brk) {
+                width: 90%;
+                margin: 0;
+
+                &::placeholder {
+                    font-size: 20px;
+                }
+            }
+
+            @media only screen and (max-width: $s-brk) {
+                width: 80%;
+                place-self: center;
+            }
+
+            @media only screen and (max-width: $xs-brk) {
+                &::placeholder {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &-button {
+            grid-area: right;
+            width: 60px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid red;
+            cursor: pointer;
+        }
+
+        &-icon {
+            width: 20px;
+        }
+    }
+
+    &__description {
+        grid-area: right;
+        background-color: hsla(0,0%,1.2%, .8);
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        color: white;
+        padding-right: 5%;
+
+        &-container {
+            width: 80%;
+            background-color: coral;
+            border-radius: 15px;
+
+            & p {
+                font-size: 19px;
+                margin: 4%;
+                line-height: 30px;
+            }
+        }
+
+        @media only screen and (max-width: $m-brk) {
+            padding: 9px 0;
+            
+            &-container {
+                width: 90%;
+
+                p {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: $s-brk) {
+            padding: 0 0 30px 0;
+
+            &-container {
+                width: 80%;
+            }
+        }
+
+    }
+}
+
+.pokemons-container {
+    grid-area: cards;
+    background-color: white;
+    padding: 10px 0 0;
+    transition: all 1s;
+    position: relative;
+    opacity: 0;
+
+    &-notFound {
+        opacity: 1;
+        text-align: center;
+        font-size: 30px;
+        border: 5px solid red;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    &-empty {
+        height: 0;
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    &-ready {
+        height: 100%;
+        width: 100%;
+        transition: all 1s;
+        opacity: 1;
+    }
+}
+
+.pokemon-card {
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 40px;
+
+    &__title {
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+
+    &__image {
+        width: 100%;
+        background-color: hsl(0, 0%, 90%);
+        border-radius: 15px;
+        cursor: pointer;
+
+        &-container {
+            width: 85%;
+            margin: 0 auto;
+        }
+    }
+
+    &__number {
+        color: gray;
+    }
+
+    &__info {
+        width: 85%;
+        margin-left: 40px;
+    }
+
+    @media only screen and (max-width: $l-brk) {
+        width: 33%;
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: $m-brk) {
+        width: 50%;
+
+        &__info {
+            margin-left: 30px;
+        }
+    }
+
+    @media only screen and (max-width: $s-brk) {
+        width: 100%;
+    }
+}

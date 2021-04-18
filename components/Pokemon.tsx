@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
 
 // Components
-import Loader from '../../components/Loader';
-import NotFound from '../../components/NotFound';
-import PokemonInfo from '../../components/PokemonInfo';
+import Loader from './Loader';
+import NotFound from './NotFound';
+import PokemonInfo from './PokemonInfo';
 
 // Request and helpers
-import { fetchInfoPokemon, fetchImage } from '../../requests/pokemons';
-import { abbreviateWord, autoScroll } from '../../utils/helpers';
+import { fetchInfoPokemon, fetchImage } from '../requests/pokemons';
+import { abbreviateWord, autoScroll } from '../utils/helpers';
 
 // types
-import { RootState } from '../../redux/rootReducer';
-import { StatsPokemon } from '../../interfaces';
+import { RootState } from '../redux/rootReducer';
+import { StatsPokemon } from '../interfaces';
 
-const Pokemon = () => {
-    const router = useRouter();
-    const { id: pokemonParamId } = router.query;
+type Props = {
+    match: {
+        params: {
+            id: string
+        }
+    }
+}
 
+const Pokemon = (props: Props) => {
     const [pokemonInfo, setPokemonInfo] = useState<Object>({});
     const [notFound, setNotFound] = useState(false);
     
@@ -64,7 +68,7 @@ const Pokemon = () => {
                 const selectedPok = pokemons.find(pokemon => {
                     const { pokemon_species: { name } } = pokemon;
     
-                    return name === pokemonParamId;
+                    return name === props.match.params.id;
                 });
     
                 if (selectedPok) {
@@ -132,4 +136,4 @@ Pokemon.propTypes = {
     pokemons: PropTypes.array,
     match: PropTypes.object,
     listTypes: PropTypes.array
-};
+}
