@@ -1,0 +1,103 @@
+@import '../base/vars';
+
+.header {
+    display: grid;
+    grid-template-rows: 200px;
+    grid-template-columns: 1.5fr 1.5fr 2fr 1.5fr 1.5fr;
+    grid-template-areas: "left-img left-mid-img center-img right-mid-img right-img";
+    justify-items: center;
+    align-items: center;
+    background: black;
+
+    @media only screen and (min-width: $s-brk) and (max-width: $m-brk) {
+        grid-template-rows: 200px;
+        grid-template-columns: 1.5fr 1.5fr 2fr 1.5fr 1.5fr;
+        grid-template-areas: "left-mid-img left-mid-img center-img right-mid-img right-mid-img";
+
+        &--left {
+            display: none;
+        }
+
+        &--right {
+            display: none;
+        }
+    }
+
+    &__image {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        cursor: pointer;
+
+        &--center {
+            width: 170px;
+            height: auto;
+            place-self: center;
+        }
+
+    }
+
+    &__container {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        padding: 4px 0;
+
+        @media only screen and (max-width: $s-brk) {
+            display: none;
+
+            &--center {
+               display: block
+            }
+        }
+
+        @media only screen and (max-width: $m-brk) {
+            width: 88%;
+
+            &--left {
+                display: none;
+            }
+
+            &--right {
+                display: none;
+            }
+
+            &--mid-right {
+                margin-left: 12%;
+            }
+    
+            &--mid-left {
+                margin-right: 12%;
+            }
+
+            &--center {
+                width: 100%;
+            }
+        }
+
+        &--left {
+            grid-area: left-img;
+            background: blue;
+        }
+
+        &--mid-left {
+            grid-area: left-mid-img;
+            background: red;
+        }
+        
+        &--mid-right {
+            grid-area: right-mid-img;
+            background: green;
+        }
+
+        &--right {
+            grid-area: right-img;
+            background: yellow;
+        }
+
+        &--center {
+            grid-area: center-img;
+            padding: 0;
+        }
+    }
+}

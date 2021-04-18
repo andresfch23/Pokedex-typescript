@@ -1,0 +1,251 @@
+@import '../base/vars';
+
+.background {
+    &--normal {
+        background-color: $normal;
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #A6A6D0;
+                fill: $normal;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--fighting {
+        background-color: $fighting;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #D5676D;
+                fill: $fighting;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--flying {
+        background: linear-gradient(180deg, $flying-blue 50%, #a6a6a6 61%);
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: $flying-blue;
+                fill: $flying-blue;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--poison {
+        background-color: $poison;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #B97FFF;
+                fill: $poison;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--ground {
+        background: linear-gradient(180deg, $ground-yellow 50%, #ab9842 50%);
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: $ground-yellow;
+                fill: $ground-yellow;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--rock {
+        background-color: $rock;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #A38C98;
+                fill: $rock;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--bug {
+        background-color: $bug;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #729F7C;
+                fill: $bug;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--ghost {
+        background-color: $ghost;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #7B62FF;
+                fill: $ghost;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--steel {
+        background-color: $steel;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #9EB7DC;
+                fill: $steel;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--fire {
+        background-color: $fire;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #FD7D83;
+                fill: $fire;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--water {
+        background-color: $water;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #4592FF;
+                fill: $water;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--grass {
+        background-color: $grass;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: $grass;
+                fill: $grass;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--electric {
+        background-color: $electric;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #cfb300;
+                fill: $electric;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--psychic {
+        background-color: $psychic;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #F366FF;
+                fill: $psychic;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--ice {
+        background-color: $ice;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #51C4FF;
+                fill: $ice;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--dragon {
+        background: linear-gradient(180deg, #53a4cf 50%, $dragon-orange 50%);
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #F16E77;
+                fill: $dragon-orange;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--dark {
+        background-color: $dark;
+        color: white;
+        
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #70703A;
+                fill: $dark;
+                fill-opacity: 0.7;
+            }
+        }
+    }
+
+    &--fairy {
+        background-color: $fairy;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: #e998ec;
+                fill: $fairy;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--unknown {
+        background-color: $normal;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: $normal;
+                fill: $normal;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+
+    &--shadow {
+        background-color: $normal;
+
+        &-polygon {
+            & .recharts-polygon {
+                stroke: $normal;
+                fill: $normal;
+                fill-opacity: $background-opacity;
+            }
+        }
+    }
+}
