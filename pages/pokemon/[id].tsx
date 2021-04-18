@@ -21,7 +21,7 @@ const Pokemon = () => {
     const router = useRouter();
     const { id: pokemonParamId } = router.query;
 
-    const [pokemonInfo, setPokemonInfo] = useState<Object>({});
+    const [pokemonInfo, setPokemonInfo] = useState<any>({});
     const [notFound, setNotFound] = useState(false);
     
     const pokemons = useSelector((state: RootState) => state.pokemons.listPokemons);
@@ -100,7 +100,7 @@ const Pokemon = () => {
     }
 
     return (
-        <Layout>
+        <Layout title={pokemonInfo?.species?.name}>
             {
                 Object.entries(pokemonInfo).length === 0 && notFound ?
                     (
