@@ -19,7 +19,7 @@ type Props = {
 const Chart = ({ data, className, name = '' }: Props) => (
     <div className="pokemon__chart">
         <h2 className="pokemon__chart-title">Stats</h2>
-        <ResponsiveContainer  height={300}>
+        <ResponsiveContainer height={300}>
             <RadarChart data={data} className={className} >
                 <PolarGrid />
                 <PolarAngleAxis dataKey="name" />

@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import ImageNext from 'next/image';
 
 const Image = (
     {

@@ -1,41 +1,31 @@
-# TypeScript Next.js example
+# Pokedex App
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+This is a really simple Pokedex migrated from an older repository that use Next.js with TypeScript.
 
-## Deploy your own
+## To run the project locally in development mode
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- Clone the repository.
+- Install Node.js version 10+.
+- Install dependencies with `npm i`.
+- Use `npm run dev` to run the project in development mode.
+- Open [http://localhost:3000](http://localhost:3000)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+## To run the project locally in production mode
 
-## How to use it?
+- Clone the repository.
+- Install Node.js version 10+.
+- Install dependencies with `npm i`.
+- Use `npm run build` to build your App.
+- Use `npm run start` to run your project in production me.
+- Open [http://localhost:3000](http://localhost:3000)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Technologies used
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
-```
+Project boostraped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- [Next.js](https://github.com/vercel/next.js) - React Based framework with SSR and SSG capability, very fast and SEO friendly.
+- [Typescript](https://www.typescriptlang.org/) - It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+- [Sass](https://sass-lang.com/) - Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
-
-```
-npm install --save-dev typescript
-```
-
-To enable TypeScript's features, we install the type declarations for React and Node.
-
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
-
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+## Made By
+[Andres Chavez](https://www.linkedin.com/in/andres-felipe-chavez-herrera-611b1315b/) - Frontend Developer

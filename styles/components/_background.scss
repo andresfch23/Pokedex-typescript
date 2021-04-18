@@ -4,7 +4,7 @@
     &--normal {
         background-color: $normal;
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #A6A6D0;
                 fill: $normal;
                 fill-opacity: $background-opacity;
@@ -17,7 +17,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #D5676D;
                 fill: $fighting;
                 fill-opacity: $background-opacity;
@@ -29,7 +29,7 @@
         background: linear-gradient(180deg, $flying-blue 50%, #a6a6a6 61%);
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: $flying-blue;
                 fill: $flying-blue;
                 fill-opacity: $background-opacity;
@@ -42,7 +42,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #B97FFF;
                 fill: $poison;
                 fill-opacity: $background-opacity;
@@ -54,7 +54,7 @@
         background: linear-gradient(180deg, $ground-yellow 50%, #ab9842 50%);
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: $ground-yellow;
                 fill: $ground-yellow;
                 fill-opacity: $background-opacity;
@@ -67,7 +67,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #A38C98;
                 fill: $rock;
                 fill-opacity: $background-opacity;
@@ -80,7 +80,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #729F7C;
                 fill: $bug;
                 fill-opacity: $background-opacity;
@@ -93,7 +93,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #7B62FF;
                 fill: $ghost;
                 fill-opacity: $background-opacity;
@@ -105,7 +105,7 @@
         background-color: $steel;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #9EB7DC;
                 fill: $steel;
                 fill-opacity: $background-opacity;
@@ -118,7 +118,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #FD7D83;
                 fill: $fire;
                 fill-opacity: $background-opacity;
@@ -131,7 +131,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #4592FF;
                 fill: $water;
                 fill-opacity: $background-opacity;
@@ -143,7 +143,7 @@
         background-color: $grass;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: $grass;
                 fill: $grass;
                 fill-opacity: $background-opacity;
@@ -155,7 +155,7 @@
         background-color: $electric;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #cfb300;
                 fill: $electric;
                 fill-opacity: $background-opacity;
@@ -168,7 +168,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #F366FF;
                 fill: $psychic;
                 fill-opacity: $background-opacity;
@@ -180,7 +180,7 @@
         background-color: $ice;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #51C4FF;
                 fill: $ice;
                 fill-opacity: $background-opacity;
@@ -192,7 +192,7 @@
         background: linear-gradient(180deg, #53a4cf 50%, $dragon-orange 50%);
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #F16E77;
                 fill: $dragon-orange;
                 fill-opacity: $background-opacity;
@@ -205,7 +205,7 @@
         color: white;
         
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #70703A;
                 fill: $dark;
                 fill-opacity: 0.7;
@@ -217,7 +217,7 @@
         background-color: $fairy;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: #e998ec;
                 fill: $fairy;
                 fill-opacity: $background-opacity;
@@ -229,7 +229,7 @@
         background-color: $normal;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: $normal;
                 fill: $normal;
                 fill-opacity: $background-opacity;
@@ -241,7 +241,7 @@
         background-color: $normal;
 
         &-polygon {
-            & polygon {
+            & .recharts-polygon {
                 stroke: $normal;
                 fill: $normal;
                 fill-opacity: $background-opacity;

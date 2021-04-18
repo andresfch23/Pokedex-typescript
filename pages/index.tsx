@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../components/Layout';
@@ -6,10 +6,6 @@ import Layout from '../components/Layout';
 // Components
 import PokemonCard from '../components/PokemonCard';
 import Loader from '../components/Loader';
-
-// Redux Actions
-import { addPokemons } from '../redux/slices/pokemon';
-import { addTypes } from '../redux/slices/types';
 
 // Other stuff
 import { noSpecialCharacters } from '../utils/globalVars';
@@ -35,11 +31,6 @@ const Home = () => {
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
-  useEffect(() => {
-    dispatch(addPokemons());
-    dispatch(addTypes());
-  }, []);
 
   const classNameContainerState =
     searchVal.length <= 2 ?

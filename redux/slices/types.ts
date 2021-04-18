@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppDispatch, AppThunk } from '../store';
 import { fetchTypePokemons } from '../../requests/pokemons';
-import { TypesState } from '../../interfaces';
+import { SpecificTypePokemon, TypesState } from '../../interfaces';
 
 const initialState = {
     loading: false,
@@ -16,7 +16,7 @@ const typesSlice = createSlice({
         addStarted(state) {
             state.loading = true;
         },
-        addSuccess(state, action: PayloadAction<Array<{}>>) {
+        addSuccess(state, action: PayloadAction<Array<SpecificTypePokemon>>) {
             state.loading = false;
             state.error = false;
             state.listTypes = action.payload;

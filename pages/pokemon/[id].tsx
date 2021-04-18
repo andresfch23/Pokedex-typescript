@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Loader from '../../components/Loader';
 import NotFound from '../../components/NotFound';
 import PokemonInfo from '../../components/PokemonInfo';
+import Layout from '../../components/Layout';
 
 // Request and helpers
 import { fetchInfoPokemon, fetchImage } from '../../requests/pokemons';
@@ -99,7 +100,7 @@ const Pokemon = () => {
     }
 
     return (
-        <div>
+        <Layout>
             {
                 Object.entries(pokemonInfo).length === 0 && notFound ?
                     (
@@ -121,7 +122,7 @@ const Pokemon = () => {
                     />
                 )
             }
-        </div>
+        </Layout>
     )
 }
 
