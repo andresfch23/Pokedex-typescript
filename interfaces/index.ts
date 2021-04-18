@@ -7,7 +7,7 @@ export interface PokemonsState {
 export interface SearchInfoState {
   filterValue: string,
   filteredPokemons: { pokemons: Array<SpecificInfoPokemon> },
-  selectedPokemon: SpecificInfoPokemon
+  selectedPokemon: { formatedNumber?: string }
 };
 
 export interface TypesState {
