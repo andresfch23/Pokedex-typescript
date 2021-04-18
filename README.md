@@ -1,6 +1,6 @@
 # Pokedex App
 
-This is a really simple Pokedex migrated from an older repository that use Next.js with TypeScript.
+This is a really simple Pokedex migrated from an older repository that use Next.js with TypeScript. Live version in https://pokedex-ts.vercel.app/ .
 
 ## To run the project locally in development mode
 
