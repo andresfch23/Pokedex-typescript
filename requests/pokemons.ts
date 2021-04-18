@@ -59,7 +59,7 @@ export const fetchTypePokemons = async (): Promise<any> => {
     }
 }
 
-export const fetchImage = async (num: string, type: string) => {
+export const fetchImage = async (num: string | undefined, type: string) => {
     const typeImg = type === 'detail' ? type : 'full';
     const urlImage = `/api/images/${typeImg}/${num}`;
     const response = await axios.get(urlImage);

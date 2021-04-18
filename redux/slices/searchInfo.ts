@@ -19,7 +19,7 @@ const searchInfoSlice = createSlice({
         addFilterValue(state, action: PayloadAction<string>) {
             state.filterValue = action.payload
         },
-        addSelectedPokemon(state, action: PayloadAction<Object>) {
+        addSelectedPokemon(state, action: PayloadAction<SpecificInfoPokemon>) {
             state.selectedPokemon = action.payload
         }
     }
